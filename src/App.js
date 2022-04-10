@@ -1,12 +1,9 @@
 import React from 'react';
-
 import './App.css';
 import {useSelector, useDispatch} from 'react-redux';
-import {increment, decrement, toggleLoggedStatus} from './actions';
 import { getCounterState } from './selectors/counter';
 import { getLoggedState } from './selectors/logged';
-
-
+import {counterActions, loggedInActions} from './actions/index'
 
 function App() {
   const counter = useSelector(getCounterState);
@@ -15,10 +12,10 @@ function App() {
   return (
     <div className="App">
     <h1>Counter {counter}</h1>
-    <button onClick={() => dispatch(increment(5))}>+</button>
-    <button onClick={() => dispatch(decrement())}>-</button><br></br>
+    <button onClick={() => dispatch(counterActions.increment(5))}>+</button>
+    <button onClick={() => dispatch(counterActions.decrement())}>-</button><br></br>
     {isLogged && (<h3>is logged</h3>)}
-    <button onClick={() => dispatch(toggleLoggedStatus())}>Toggle logged in state</button>
+    <button onClick={() => dispatch(loggedInActions.toggleLoggedStatus())}>Toggle logged in state</button>
 
     </div>
   );

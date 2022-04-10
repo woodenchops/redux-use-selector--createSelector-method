@@ -1,12 +1,9 @@
+
 import * as actionType from '../actions/actionTypes';
+import {createReducer} from '@reduxjs/toolkit';
 
-const isLoggedReducer = (state = false, action) => {
-    switch(action.type) {
-        case actionType.SIGN_UP:
-            return state = !state;  
-        default:
-            return state;  
-    };
-};
 
-export default isLoggedReducer;
+export const isLoggedReducer = createReducer(false, {
+    [actionType.SIGN_UP]: (state) => !state
+})
+

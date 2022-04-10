@@ -1,20 +1,12 @@
 import * as actionType from './actionTypes';
+import {createAction} from '@reduxjs/toolkit'
 
-export const increment = (num) => {
-    return {
-        type: actionType.INCREMENT,
-        payload: num
-    }
-};
+export const counterActions = {
+    increment: createAction(actionType.INCREMENT),
+    decrement: createAction(actionType.DECREMENT)
+}
 
-export const decrement = (num) => {
-    return {
-        type: actionType.DECREMENT
-    }
-};
+export const loggedInActions = {
+    toggleLoggedStatus: createAction(actionType.SIGN_UP),
+}
 
-export const toggleLoggedStatus = () => {
-    return {
-        type: actionType.SIGN_UP
-    };
-};
