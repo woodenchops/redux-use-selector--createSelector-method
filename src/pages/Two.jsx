@@ -2,10 +2,10 @@ import React from "react";
 import { useModalHook } from "../hooks/modalHook";
 
 export const Two = () => {
-  const { handleModalClose } = useModalHook();
+  const { DelayedAssistModal } = useModalHook();
   return (
     <div>
-      Two <button onClick={handleModalClose}>Close Modal</button>
+      Two <DelayedAssistModal />
     </div>
   );
 };

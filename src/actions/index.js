@@ -11,6 +11,6 @@ export const loggedInActions = {
 }
 
 export const closedModalActions = {
-    setModalBeenClosed: createAction(actionType.MODAL_CLOSED),
+    setModalBeenClosed: createAction(actionType.CLOSE_MODAL),
 }
 
