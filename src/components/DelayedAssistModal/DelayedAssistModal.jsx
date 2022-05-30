@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { closedModalActions } from "../../actions";
+import { getHasModalBeenClosedState } from "../../selectors/modal";
 
-export const DelayedAssistModal = () => {
+export const DelayedAssistModal = ({
+  id,
+  description = "This is the delay modal",
+}) => {
   const modalSelector = useSelector(getHasModalBeenClosedState);
   const dispatch = useDispatch();
   const [shouldModalOpen, setShouldModalOpen] = useState(false);
@@ -18,9 +24,8 @@ export const DelayedAssistModal = () => {
   });
 
   return shouldModalOpen ? (
-    <div>
-      This is the delay modal{" "}
-      <button onClick={handleModalClose}>Close Modal</button>
+    <div id={id} key={id}>
+      {description} <button onClick={handleModalClose}>Close Modal</button>
     </div>
   ) : null;
 };
