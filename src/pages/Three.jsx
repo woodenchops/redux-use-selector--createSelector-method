@@ -1,8 +1,7 @@
 import React from "react";
-import { useModalHook } from "../hooks/modalHook";
+import { DelayedAssistModal } from "../components/DelayedAssistModal/DelayedAssistModal";
 
 export const Three = () => {
-  const { DelayedAssistModal } = useModalHook();
   return (
     <div>
       Three <DelayedAssistModal />
