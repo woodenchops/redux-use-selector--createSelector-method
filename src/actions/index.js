@@ -10,3 +10,7 @@ export const loggedInActions = {
     toggleLoggedStatus: createAction(actionType.SIGN_UP),
 }
 
+export const closedModalActions = {
+    setModalBeenClosed: createAction(actionType.MODAL_CLOSED),
+}
+
